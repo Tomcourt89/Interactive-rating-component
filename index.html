@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/script.js"></script>
   
   <title>Frontend Mentor | Interactive rating component</title>
 
@@ -15,35 +17,51 @@
   </style>
 </head>
 <body>
+  <article class="feedback">
+    <img src="./images/icon-star.svg" alt="A star">
 
-  <!-- Rating state start -->
+    <h2>How did we do?</h2>
+    <p>Please let us know how we did with your support request. All feedback is appeciated to help us improve our offering!</p>
 
-  How did we do?
+    <form action="#">
+      <ul class="rating">
+          <li>
+            <label for="one">1</label>
+            <input type="radio" id="one" name="rating" value="1">
+          </li>
+          <li>
+            <label for="two">2</label>
+            <input type="radio" id="two" name="rating" value="2">
+          </li>
+          <li>
+            <label for="three">3</label>
+            <input type="radio" id="three" name="rating" value="3">
+          </li>
+          <li>
+            <label for="four">4</label>
+            <input type="radio" id="four" name="rating" value="4">
+          </li>
+          <li>
+            <label for="five">5</label>
+            <input type="radio" id="five" name="rating" value="5">
+          </li>
+      </ul>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </article>
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+  <article class="response">
+    <img src="./images/illustration-thank-you.svg" alt="Thank you illustration">
 
-  1 2 3 4 5
+    <p class="selection">You selected <span class="choice"></span> out of 5</p>
 
-  Submit
+    <h2>Thank you!</h2>
+    <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+  </article>
 
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/Tomcourt89/">Tom Court</a>.
   </div>
 </body>
 </html>
