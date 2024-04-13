@@ -1,0 +1,133 @@
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --grey: hsl(216, 12%, 54%);
+    --blue: hsl(213, 19%, 18%);
+    --dark-blue: hsl(216, 12%, 8%);
+
+    --gradient: hsl(215, 20%, 17%), hsl(215, 24%, 12%);
+
+    --text-base: 0.875rem;
+    --text-lg: 1.5rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    place-items: center;
+    grid-template-rows: 90% 1fr;
+    font-family: "Overpass", sans-serif;
+    font-size: var(--text-base);
+    background: var(--dark-blue);
+    color: var(--light-grey);
+}
+
+article {
+    background: radial-gradient(var(--gradient));
+    margin: 24px;
+    padding: 24px;
+    max-width: 412px;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.feedback {
+    & img {
+        height: 40px;
+        width: 40px;
+        padding: 13px;
+        border-radius: 50%;
+        background: var(--blue);
+        margin-bottom: 16px;
+    }
+
+    & h2 {
+        color: var(--white);
+        font-size: var(--text-lg);
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    & p {
+        line-height: 22px;
+    }
+    
+    & form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.rating {
+    margin-block: 24px;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+
+    & li {
+        height: 40px;
+        width: 40px;
+        display: grid;
+        border-radius: 50%;
+        place-items: center;
+        position: relative;
+
+        & input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            appearance: none;
+            cursor: pointer;
+            background: var(--blue);
+            border-radius: 50%;
+            transition: background ease 0.5s;
+
+            &:checked {
+                background: var(--grey);
+            }
+        }
+
+        & label {
+            pointer-events: none;
+            z-index: 10;
+            transition: color ease 0.5s;
+
+            &:has(~input:checked) {
+                color: var(--white);
+            }
+        }
+    }
+}
+
+.submit-btn {
+    background: var(--orange);
+    padding-block: 12px;
+    border: none;
+    border-radius: 22.5px;
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: 1.87px;
+    text-transform: uppercase;
+    font-size: var(--text-base);
+    font-family: "Overpass", sans-serif;
+    transition: all ease 0.5s;
+
+    &:active {
+        background: var(--white);
+        color: var(--orange);
+    }
+}
+
+.response {
+    display: none;
+}
