@@ -10,6 +10,11 @@
 
     --text-base: 0.875rem;
     --text-lg: 1.5rem;
+
+    @media (width >= 64em) {
+        --text-base: 0.938rem;
+        --text-lg: 1.75rem;
+    }
 }
 
 * {
@@ -48,6 +53,19 @@ article {
     & p {
         line-height: 22px;
     }
+
+    @media (width >= 64em) {
+        padding: 32px;
+        border-radius: 30px;
+
+        & h2 {
+            margin-bottom: 15px;
+        }
+
+        & p {
+            line-height: 24px;
+        }
+    }
 }
 
 .feedback {
@@ -63,6 +81,15 @@ article {
     & form {
         display: flex;
         flex-direction: column;
+    }
+
+    @media (width >= 64em) {
+        & img {
+            height: 48px;
+            width: 48px;
+            padding: 16px;
+            margin-bottom: 30px;
+        }
     }
 }
 
@@ -101,9 +128,32 @@ article {
             transition: color ease 0.5s;
             color: var(--grey);
 
-            &:has(~input:checked) {
+            &:has(~ input:checked) {
                 color: var(--white);
             }
+        }
+    }
+
+    @media (width >= 64em) {
+        margin-bottom: 32px;
+
+        & li {
+            height: 51px;
+            width: 51px;
+        }
+
+        & label {
+            font-size: 1rem;
+        }
+    }
+
+    @media (hover: hover) {
+        & input:hover {
+            background: var(--orange);   
+        }
+
+        & label:has(~ input:hover) {
+            color: var(--white);
         }
     }
 }
@@ -120,10 +170,18 @@ article {
     font-size: var(--text-base);
     font-family: "Overpass", sans-serif;
     transition: all ease 0.5s;
+    cursor: pointer;
 
     &:active {
         background: var(--white);
         color: var(--orange);
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background: var(--white);
+            color: var(--orange);
+        }
     }
 }
 
@@ -145,5 +203,15 @@ article {
 
     & p {
         text-align: center;
+    }
+
+    @media (width >= 64em) {
+        & img {
+            margin-block: 13px 32px;
+        }
+
+        & .selection {
+            margin-bottom: 32px;
+        }
     }
 }
